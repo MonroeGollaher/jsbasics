@@ -7,8 +7,80 @@
     // output: 7
 
 function daysPosition(day, offset) {
+    if(offset != true) {
+        switch (day) {
+            case 'sunday':
+                return 1
+                break
+            case 'monday':
+                return 2
+                break
 
+            case 'tuesday':
+                return 3
+                break
+
+            case 'wednesday':
+                return 4
+                break
+
+            case 'thursday':
+                return 5
+                break
+
+            case 'friday':
+                return 6
+                break
+
+            case 'saturday':
+                return 7
+                break
+
+            default:
+                return "That's not a day of the week"
+                break
+
+        }
+
+    } else if (offset != false) {
+        switch (day) {
+            case 'sunday':
+                return 7
+                break
+
+            case 'monday':
+                return 1
+                break
+
+            case 'tuesday':
+                return 2
+                break
+
+            case 'wednesday':
+                return 3
+                break
+
+            case 'thursday':
+                return 4
+                break
+
+            case 'friday':
+                return 5
+                break
+
+            case 'saturday':
+                return 6
+                break
+
+            default:
+                return "That's not a day of the week"
+                break
+
+        }
+    }
+    
 }
+
 
 
 // --------------------------------------------
@@ -27,7 +99,30 @@ function daysPosition(day, offset) {
  */
 
  function golfScore(score, par) {
-
+    let scoreDiff = (score - par)
+    switch (scoreDiff) {
+        case -3:
+            return "Ace"
+            break
+        case -2:
+            return "Eagle"
+            break
+        case -1:
+            return "Birdie"
+            break
+        case 0:
+            return "Par"
+            break
+        case 1:
+            return "Bogie"
+            break
+        case 2:
+            return "Double Bogie"
+            break
+        default:
+            return "Ouch"
+            break
+    }
  }
  
 
@@ -52,5 +147,51 @@ function daysPosition(day, offset) {
 let count = 0
 
 function cardCounter(card) {
+    switch (card) {
+        case '2':
+            ++count
+            break
+        case '3':
+            ++count
+            break
+        case '4':
+            ++count
+            break
+        case '5':
+            ++count
+            break
+        case '6':
+            ++count
+            break
+        case '7':
 
+            break
+        case '8':
+
+            break
+        case '9':
+
+            break
+        case '10':
+            --count
+            break
+        case 'J':
+            --count
+            break
+        case 'Q':
+            --count
+            break
+        case 'K':
+            --count
+            break
+        case 'A':
+            --count
+            break
+    }
+
+    if (count > 0) {
+        return `${count} Bet`
+    } else if (count <= 0) {
+        return `${count} Hold`
+    }
 }
